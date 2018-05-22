@@ -1,0 +1,31 @@
+http://martinfowler.com/articles/nosqlKeyPoints.html
+
+https://algorithmia.com/
+https://cwiki.apache.org/confluence/display/WICKET/Index
+
+Google search: spring session scope vs sessionattribute
+http://stackoverflow.com/questions/18791645/how-to-use-session-attributes-in-spring-mvc
+http://docs.spring.io/spring/docs/3.2.x/spring-framework-reference/html/mvc.html#mvc-ann-sessionattrib
+http://www.intertech.com/Blog/understanding-spring-mvc-model-and-session-attributes/
+
+
+
+-----
+http://tattletale.jboss.org/
+
+----------------------------------------------------------
+https://docs.spring.io/spring/docs/current/spring-framework-reference/html/orm.html
+https://developer.jboss.org/wiki/SessionsAndTransactions
+http://docs.jboss.org/jbosstm/5.0.0.M1/guides/narayana-jts-development_guide/index.html
+http://docs.spring.io/spring/docs/current/spring-framework-reference/html/transaction.html
+
+-- Important consideration while using multiple transaction managers with spring
+"Internally Spring's transaction managers all use Spring's TransactionSynchronizationManager which keeps a bunch of critical state in static ThreadLocal variables, so transaction managers are guaranteed to stomp all over each other's state."
+http://stackoverflow.com/questions/25423975/spring-rmi-transactions-weblogic
+http://stackoverflow.com/questions/22893160/choose-between-muliple-transaction-managers-at-runtime
+http://gharshangupta.blogspot.jp/
+
+
+http://docs.oracle.com/cd/E14571_01/web.1111/e13734/transaction.htm#WSADV383
+
+

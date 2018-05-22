@@ -1,0 +1,31 @@
+### memcache : http://tugdualgrall.blogspot.jp/2011/11/installing-memcached-on-mac-os-x-and.html
+nitendra.thakur@P34662:~$ telnet 127.0.0.1 11211
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
+set KEY 0 600 16
+This is my value
+STORED
+get KEY
+VALUE KEY 0 16
+This is my value
+END
+^]
+telnet> bye
+?Invalid command
+telnet> quit
+Connection closed.
+
+### SMTP agent (Postfix) : http://stackoverflow.com/questions/11988454/how-to-check-if-smtp-is-working-from-commandline-linux
+# https://code.google.com/archive/p/woodpecker-tester/ #
+telnet {smtp_domain_name} {port_number}
+hello velanapps.com
+mail from:<test@velanapps.com>
+rcpt to:<to_email@velanapps.com>
+data
+From: test@velanapps.com
+Subject: test mail from command line
+
+this is test number 1
+sent from linux box
+.

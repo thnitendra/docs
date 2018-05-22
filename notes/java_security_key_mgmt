@@ -1,0 +1,38 @@
+############################# Java.Security ########################
+
+#https://www.sslshopper.com/article-most-common-java-keytool-keystore-commands.html
+# https://www.andrewzammit.com/blog/download-install-a-ssl-cert-into-a-java-keystore-with-keytool/
+openssl s_client -connect host.domain.tld:465 > host.domain.tld.dump
+##openssl s_client -host google.com -port 443 -prexit -showcerts
+##openssl s_client -connect localhost:443 > localMule.dump
+
+# To figure out the host of a certificate
+openssl x509 -in localMule.dump -text | grep CN
+
+!!! Copy the Base64 key from the dump to a pem file e.g 10.58.44.31.pem
+
+# install the certificate in keystore using java keytool
+keytool -import -alias host.domain.tld -keystore /opt/thirdpartyapp/jre/lib/security/cacerts -file ~/host.domain.tld.pem
+##keytool -import -alias gca -file googleca.pem -keystore trust.jks
+#keytool -import -alias 10.58.44.31 -keystore /opt/thirdpartyapp/jre/lib/security/cacerts -file ~/10.58.44.31.pem
+
+# Check the list certififates currently installed
+keytool -list -keystore .keystore
+keytool -list -keystore .keystore -alias foo
+
+# Change keystore password
+keytool -storepasswd -keystore my.keystore
+keytool -keypasswd  -alias <key_name> -keystore my.keystore
+
+###########
+##<JAVA_HOME>\bin\keytool -import -v -trustcacerts -alias server-alias -file server.cer -keystore cacerts.jks -keypass changeit -storepass changeit
+###########
+
+# Copy the certificate into the directory Java_home\Jre\Lib\Security
+# Change your directory to Java_home\Jre\Lib\Security>
+# Import the certificate to a trust store.
+
+keytool -import -alias ca -file somecert.cer -keystore cacerts -storepass changeit [Return]
+
+Trust this certificate: [Yes]
+
